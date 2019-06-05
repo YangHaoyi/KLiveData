@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <!--绑定数据类-->
+        <variable name="weatherData"
+            type="com.yanghaoyi.klivedata.model.bean.WeatherNetData"/>
+        <variable
+            name="presenter"
+            type="com.yanghaoyi.klivedata.view.MainActivity.WeatherPresenter"/>
+    </data>
+    <!--页面根布局-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edInput"
+            android:hint="@string/please_input_city"
+            style="@style/Common_EditText"/>
+        <View
+            style="@style/Common_CutLine"/>
+        <TextView
+            android:id="@+id/tvSearch"
+            style="@style/Common_Button"
+            android:text="@string/search"
+            android:onClick="@{(view)->presenter.onClick(view,edInput.text.toString)}"/>
+        <View
+            style="@style/Common_CutLine"/>
+        <TextView
+            android:id="@+id/tvCold"
+            style="@style/Common_Button"
+            android:text="@{weatherData.data.ganmao??`详情`}"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVVM</string>
+    <string name="search">查询</string>
+    <string name="please_input_city">请输入城市名</string>
+</resources>
